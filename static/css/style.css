@@ -141,3 +141,25 @@ th, td {
 th {
     background-color: #233554;
 }
+
+/* Add this to your existing CSS */
+.news-item {
+    background-color: #233554;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.news-item h3 {
+    color: #64ffda;
+    margin-top: 0;
+}
+
+.news-item a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}

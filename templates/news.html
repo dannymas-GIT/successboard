@@ -18,33 +18,10 @@
     </nav>
     <div class="container">
         <div class="column">
-            <h2>Top Headlines</h2>
-            <div class="news-item">
-                <h3>Breaking News 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div class="news-item">
-                <h3>Breaking News 2</h3>
-                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </div>
-        <div class="column">
-            <h2>Categories</h2>
-            <ul>
-                <li>Politics</li>
-                <li>Technology</li>
-                <li>Science</li>
-                <li>Entertainment</li>
-            </ul>
-        </div>
-        <div class="column">
-            <h2>Trending Topics</h2>
-            <div id="trendingTopics">
-                <span class="topic">#Topic1</span>
-                <span class="topic">#Topic2</span>
-                <span class="topic">#Topic3</span>
-            </div>
+            <h2>Top Business Headlines</h2>
+            <div id="newsContainer"></div>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='js/news.js') }}"></script>
 </body>
 </html>

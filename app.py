@@ -2,8 +2,21 @@ from flask import Flask, render_template, request, jsonify
 import yfinance as yf
 import logging
 from datetime import datetime, timedelta
+import os
+import requests
+from dotenv import load_dotenv
 
+# Load environment variables
+load_dotenv()
+
+# Set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Get the API key and log if it's not found
+NEWS_API_KEY = os.getenv('NEWS_API_KEY')
+logging.info(f"NEWS_API_KEY: {'Set' if NEWS_API_KEY else 'Not set'}")
+if not NEWS_API_KEY:
+    logging.error("NEWS_API_KEY not found in environment variables")
 
 app = Flask(__name__)
 
@@ -88,6 +101,23 @@ def get_index_data():
 
     logging.info(f"Final index_data: {index_data}")
     return jsonify(index_data)
+
+@app.route('/get_news_data')
+def get_news_data():
+    if not NEWS_API_KEY:
+        logging.error("Attempted to fetch news without an API key")
+        return jsonify({"error": "News API key is not configured"}), 500
+
+    url = f'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey={NEWS_API_KEY}'
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # This will raise an exception for HTTP errors
+        data = response.json()
+        articles = data.get('articles', [])[:5]  # Get top 5 articles
+        return jsonify(articles)
+    except requests.RequestException as e:
+        logging.error(f"Failed to fetch news data: {e}")
+        return jsonify({"error": "Failed to fetch news data"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
