@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Research Dashboard</h1>
+    </header>
+    <nav>
+        <a href="{{ url_for('finance') }}">Finance</a>
+        <a href="{{ url_for('news') }}">News</a>
+        <a href="{{ url_for('sports') }}">Sports</a>
+        <a href="{{ url_for('research') }}" class="active">Research</a>
+    </nav>
+    <div class="container">
+        <div class="column">
+            <h2>Recent Publications</h2>
+            <div class="publication-item">
+                <h3>Paper Title 1</h3>
+                <p>Authors: John Doe, Jane Smith</p>
+                <p>Journal: Nature, 2023</p>
+            </div>
+            <div class="publication-item">
+                <h3>Paper Title 2</h3>
+                <p>Authors: Alice Johnson, Bob Williams</p>
+                <p>Journal: Science, 2023</p>
+            </div>
+        </div>
+        <div class="column">
+            <h2>Research Topics</h2>
+            <ul>
+                <li>Artificial Intelligence</li>
+                <li>Climate Change</li>
+                <li>Quantum Computing</li>
+                <li>Biotechnology</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>Funding Opportunities</h2>
+            <div class="funding-item">
+                <h3>Grant 1</h3>
+                <p>Amount: $500,000</p>
+                <p>Deadline: December 31, 2023</p>
+            </div>
+            <div class="funding-item">
+                <h3>Grant 2</h3>
+                <p>Amount: $250,000</p>
+                <p>Deadline: January 15, 2024</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

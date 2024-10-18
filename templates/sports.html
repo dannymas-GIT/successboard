@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sports Dashboard</h1>
+    </header>
+    <nav>
+        <a href="{{ url_for('finance') }}">Finance</a>
+        <a href="{{ url_for('news') }}">News</a>
+        <a href="{{ url_for('sports') }}" class="active">Sports</a>
+        <a href="{{ url_for('research') }}">Research</a>
+    </nav>
+    <div class="container">
+        <div class="column">
+            <h2>Live Scores</h2>
+            <div class="score-item">
+                <p>Team A 2 - 1 Team B</p>
+                <p>65:00</p>
+            </div>
+            <div class="score-item">
+                <p>Team C 0 - 0 Team D</p>
+                <p>12:00</p>
+            </div>
+        </div>
+        <div class="column">
+            <h2>Upcoming Matches</h2>
+            <ul>
+                <li>Team E vs Team F - Tomorrow 20:00</li>
+                <li>Team G vs Team H - 23/10 15:30</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>League Table</h2>
+            <table>
+                <tr>
+                    <th>Pos</th>
+                    <th>Team</th>
+                    <th>P</th>
+                    <th>Pts</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Team A</td>
+                    <td>10</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Team B</td>
+                    <td>10</td>
+                    <td>22</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

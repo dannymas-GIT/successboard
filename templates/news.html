@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>News Dashboard</h1>
+    </header>
+    <nav>
+        <a href="{{ url_for('finance') }}">Finance</a>
+        <a href="{{ url_for('news') }}" class="active">News</a>
+        <a href="{{ url_for('sports') }}">Sports</a>
+        <a href="{{ url_for('research') }}">Research</a>
+    </nav>
+    <div class="container">
+        <div class="column">
+            <h2>Top Headlines</h2>
+            <div class="news-item">
+                <h3>Breaking News 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="news-item">
+                <h3>Breaking News 2</h3>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="column">
+            <h2>Categories</h2>
+            <ul>
+                <li>Politics</li>
+                <li>Technology</li>
+                <li>Science</li>
+                <li>Entertainment</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>Trending Topics</h2>
+            <div id="trendingTopics">
+                <span class="topic">#Topic1</span>
+                <span class="topic">#Topic2</span>
+                <span class="topic">#Topic3</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

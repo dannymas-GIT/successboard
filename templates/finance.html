@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Finance Dashboard</h1>
+    </header>
+    <nav>
+        <a href="{{ url_for('finance') }}" class="active">Finance</a>
+        <a href="{{ url_for('news') }}">News</a>
+        <a href="{{ url_for('sports') }}">Sports</a>
+        <a href="{{ url_for('research') }}">Research</a>
+    </nav>
+    <div class="container">
+        <div class="column">
+            <h2>Major Indexes</h2>
+            <div id="indexCharts"></div>
+        </div>
+        <div class="column">
+            <h2>Stock Search</h2>
+            <input type="text" id="stockSymbol" placeholder="Enter stock symbol (e.g., AAPL)">
+            <button onclick="getStockData()">Search</button>
+            <div id="stockInfo"></div>
+        </div>
+        <div class="column">
+            <h2>Stock Chart</h2>
+            <div id="stockChart"></div>
+            <div id="timeRangeSelector">
+                <button onclick="updateChartTimeRange('1d')">1 Day</button>
+                <button onclick="updateChartTimeRange('1wk')">1 Week</button>
+                <button onclick="updateChartTimeRange('1mo')">1 Month</button>
+                <button onclick="updateChartTimeRange('1y')">1 Year</button>
+                <button onclick="updateChartTimeRange('5y')">5 Years</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/finance.js') }}"></script>
+</body>
+</html>

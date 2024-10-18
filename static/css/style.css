@@ -1,0 +1,143 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a192f;
+    color: #e6f1ff;
+}
+
+header {
+    background-color: #172a45;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #64ffda, #00bcd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav {
+    background-color: #0b2942;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #64ffda;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00bcd4;
+}
+
+.container {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.column {
+    flex: 1;
+    background-color: #172a45;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder {
+    background-color: #233554;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: #8892b0;
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #64ffda;
+    color: #0a192f;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00bcd4;
+}
+
+#stockInfo {
+    margin-top: 20px;
+}
+
+canvas {
+    width: 100%;
+    height: 300px;
+}
+
+/* Add this to your existing CSS */
+.index-item {
+    background-color: #233554;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.index-item h3 {
+    margin-top: 0;
+    color: #64ffda;
+}
+
+/* Add this to your existing CSS */
+#stockChart {
+    height: 300px;
+    width: 100%;
+}
+
+.news-item, .score-item, .publication-item, .funding-item {
+    background-color: #233554;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.topic {
+    background-color: #64ffda;
+    color: #0a192f;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #64ffda;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #233554;
+}
